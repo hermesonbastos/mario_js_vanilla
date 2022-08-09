@@ -15,7 +15,7 @@ const loop = setInterval(() => {
   const marioStyles = window.getComputedStyle(mario);
   const marioHeigth = +marioStyles.bottom.replace('px','');
 
-  const responsiveMarioHeigth = innerHeight <= 720 ? 50 : 100;
+  const responsiveMarioHeigth = innerHeight <= 720 ? 60 : 110;
 
   if(pipePosition <= marioWidth && pipePosition > 0 && marioHeigth < responsiveMarioHeigth){
     pipe.style.animation = 'none';
@@ -39,3 +39,4 @@ const loop = setInterval(() => {
 
 document.addEventListener('keydown', jump);
 document.addEventListener('click', jump);
+document.addEventListener('touchcancel', jump);
